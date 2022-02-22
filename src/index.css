@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 :root {
   --blanco: #ffffff;
   --gris1: #d4d4d4;
@@ -7,6 +9,7 @@
   --negro: #000000;
   --headingFont:'Raleway', sans-serif;
   --textFont:'Roboto', sans-serif;
+  --pageFont: 'Poppins', sans-serif;
 }
 
 /* LOGIN */
@@ -123,6 +126,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  font-family: var(--pageFont);
 }
 
 .buscador Button, .boton{
@@ -145,6 +149,7 @@
 .contenedor-cards{
   border:1px solid var(--gris1);
   border-radius: 10px;
+  font-family: var(--pageFont);
 }
 
 .carrito{

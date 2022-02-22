@@ -60,12 +60,12 @@ const CardPlatos = ({ id, title, image, healthScore, readyInMinutes, pricePerSer
         <Card.Body>
           <div className="d-flex flex-column justify-content-between h-100">
             <div className="d-flex flex-column">
-              <Card.Title>{title}</Card.Title>
+              <Card.Title style={{fontSize:"25px", fontWeight:600}}>{title}</Card.Title>
               <h3>
                 ${pricePerServing}
               </h3>
               <h6>
-                Ready in {readyInMinutes} minutes
+                Listo en {readyInMinutes} minutos
               </h6>
             </div>
             <div className="d-flex justify-content-between ">

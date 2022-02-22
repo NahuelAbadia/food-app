@@ -16,6 +16,7 @@ const Navbar = () => {
                 color: "black",
                 fontWeight: 700,
                 fontSize: "34px",
+                fontFamily: "Poppins, sans-serif"
               }}
             >
               Nappi

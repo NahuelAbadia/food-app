@@ -11,7 +11,7 @@ const ContenedorPlatos = () => {
       <>
          {/* Muestra todos los platos que trae la llamada a la API */}
          {platos.length ?
-            <div className="contenedor-cards mt-3 mb-4">
+            <div className="contenedor-cards mt-3 mb-4 bg-light">
                <div className="container">
                   <div className="row mt-3 mb-3">
                      {platos.map((item) => {

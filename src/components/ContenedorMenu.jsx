@@ -13,7 +13,7 @@ const ContenedorMenu = () => {
    return (
       <>
          {carritoRedux.length ?
-            <div className="contenedor-cards mt-3 mb-4">
+            <div className="contenedor-cards mt-3 mb-4 bg-light">
                <h1 className="titulos-carrito">Mi Menu:</h1>
                   <div className="row mt-3 mb-3 carrito">
                         {carritoRedux.length <= 0 ? null : carritoRedux.map((item) => {
