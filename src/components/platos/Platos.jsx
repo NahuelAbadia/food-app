@@ -2,10 +2,10 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma } from '../components/redux/action/action';
-import '../index.css'
+import { agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma } from '../redux/action/action';
+import '../../index.css'
 
-const CardPlatos = ({ id, title, image, healthScore, readyInMinutes, pricePerServing, plato }) => {
+const Platos = ({ id, title, image, healthScore, readyInMinutes, pricePerServing, plato }) => {
 
   const dispatch = useDispatch()
   //Me traigo state de carrito
@@ -97,4 +97,4 @@ const CardPlatos = ({ id, title, image, healthScore, readyInMinutes, pricePerSer
   )
 }
 
-export default CardPlatos;
+export default Platos;

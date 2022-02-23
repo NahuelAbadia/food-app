@@ -1,7 +1,7 @@
 import React from 'react'
-import CardPlatos from './CardPlatos';
+import Platos from './Platos';
 import { useSelector } from 'react-redux'
-import Spinner from './spinner/Spinner';
+import Spinner from '../spinner/Spinner';
 
 const ContenedorPlatos = () => {
 
@@ -16,7 +16,7 @@ const ContenedorPlatos = () => {
                   <div className="row mt-3 mb-3">
                      {platos.map((item) => {
                         return <div className="col-lg-4 col-md-6 col-sm-12">
-                           <CardPlatos
+                           <Platos
                               id={item.id}
                               title={item.title}
                               image={item.image}
@@ -25,7 +25,7 @@ const ContenedorPlatos = () => {
                               readyInMinutes={item.readyInMinutes}
                               plato={item} //le paso todas las props que tiene el plato
                            >
-                           </CardPlatos>
+                           </Platos>
                         </div>
                      })}
                   </div>

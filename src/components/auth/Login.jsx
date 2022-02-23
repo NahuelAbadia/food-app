@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import Spinner from '../spinner/Spinner'
 import '../../index.css'
+import { useDispatch } from 'react-redux';
+import { setToken } from '../redux/action/action';
 
 const Login = () => {
 
@@ -26,11 +28,14 @@ const Login = () => {
    //Funcion para guardar el token
    const setLocalStorage = value => {
       try {
-         window.localStorage.setItem("Token", value)
+         localStorage.setItem("Token", value)
       } catch (error) {
          console.error(error)
       }
    }
+
+   //dispatch para guardar el token en redux
+   const dispatch = useDispatch()
 
    const onChange = e => {
       setUsuario({
@@ -60,6 +65,8 @@ const Login = () => {
 
             if (result.data.token) {
                console.log(result.data.token);
+               //Guardar en redux
+               dispatch(setToken(result.data.token))
                //Guardo el token en local storage
                setLocalStorage(result.data.token)
                setTimeout(() => {

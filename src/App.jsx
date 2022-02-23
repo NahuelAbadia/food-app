@@ -1,28 +1,29 @@
 import React from 'react';
 import Login from './components/auth/Login'
-import PrivateRoute from './components/auth/PrivateRoute';
 import Home from './components/views/Home';
-import DescPlatos from './components/DescPlatos';
+import DescPlatos from './components/platos/DescPlatos';
+import PrivateRoutes from './components/auth/PrivateRoutes';
+import Error404 from './components/auth/Error404';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 function App() {
+
+  const Token = useSelector(state => state.token)
+  console.log(Token)
+
   return (
     <>
       <Router>
         <Routes>
           <Route exact path='/' element={<Login />} />
-
-          {/* <PrivateRoute exact path='/home' element={<Home />} /> */}
-
-          <Route exact path='/home' element={<Home />} />
-          <Route exact path='/description/:id' element={<DescPlatos />} />
-
-          {/* Método de midudev, indagar mas */}
-
-          {/* <Route exact path='/' render={() =>{
-          return user ? null : <Login />
-        }} /> */}
+          <Route element={<PrivateRoutes Token={Token} />}>
+            <Route exact path='/home' element={<Home />} />
+            <Route exact path='/description/:id' element={<DescPlatos />} />
+          </Route>
+          <Route path='*' element={<Error404 />} />
         </Routes>
       </Router>
     </>

@@ -3,9 +3,10 @@ import axios from "axios"
 // const apiKey = `790c19bb62e647dfa16d07f8fe83851f`
 // const apiKey = `bc57d855899b4bfda4d2cc6e158914ce`
 // const apiKey = `b3bfeb277ec149fcb4a10c9d5d607776`
-const apiKey = `0b5f53270b7447f78f17dd235a9bf7e2`
+const apiKey = `176311675bab4fc0b6d062692781f1a7`
 
 export const TOKEN = "TOKEN"
+export const SET_TOKEN = "SET_TOKEN"
 export const BUSCAR_PLATOS = "BUSCAR_PLATOS"
 export const AGREGAR_PLATOS = "AGREGAR_PLATOS"
 export const ELIMINAR_PLATOS = "ELIMINAR_PLATOS"
@@ -110,6 +111,13 @@ export function healthScoreResta(payload){
 export function userToken(payload){
    return {
       type:TOKEN,
+      payload
+   }
+}
+
+export function setToken(payload){
+   return {
+      type:SET_TOKEN,
       payload
    }
 }

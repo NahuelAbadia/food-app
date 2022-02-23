@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { detallesPlato } from './redux/action/action'
+import { detallesPlato } from '../redux/action/action'
 import { useEffect } from 'react'
 
 const DescPlatos = () => {
@@ -21,13 +21,13 @@ const DescPlatos = () => {
       <>
          <div className="container">
             <div
-               className="d-flex align-items-center"
+               className="d-flex mt-4 align-items-center"
                style={{ height: '90vh' }}
             >
                <div
-                  className="contenedor-desc-cards row mb-4 bg-light justify-content-center align-items-center"
+                  className="contenedor-desc-cards row mt-4 mb-4 bg-light d-flex justify-content-center align-items-center"
                >
-                  <div className="col-lg-6 col-md-6 col-sm-12 h-100 bg-light">
+                  <div className="col-lg-6 col-md-6 col-sm-12 h-100 d-flex align-items-center">
                      <img
                         src={detallesDelPlato.image}
                         alt="plato"
@@ -65,15 +65,15 @@ const DescPlatos = () => {
                               />
                            </div>
                         }
-                        <button as="a" href={detallesDelPlato.sourceUrl} className="btn btn-primary mt-5">Mas información</button>
+                        <a href={detallesDelPlato.sourceUrl} target="_blank" rel='noreferrer' className="btn btn-primary mt-5">Mas información</a>
                      </div>
                   </div>
-                  <div className="col-12 mt-4 mb-4">
+                  <div className="col-12 mt-4 mb-4 d-flex justify-content-center">
                      <Link
                         to={"/home"}
                         style={{ textDecoration: "none", color: "black", fontWeight: "600", fontSize: "20px" }}
                      >
-                        <button className="btn btn-primary btn-block">
+                        <button className="btn btn-primary">
                            Volver atras
                         </button>
                      </Link>

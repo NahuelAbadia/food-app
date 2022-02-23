@@ -1,4 +1,6 @@
 import {
+   TOKEN,
+   SET_TOKEN,
    BUSCAR_PLATOS,
    AGREGAR_PLATOS,
    ELIMINAR_PLATOS,
@@ -19,6 +21,7 @@ const inicialState = {
    total: 0,
    minutos: 0,
    healthScore: 0,
+   token: localStorage.getItem("Token") || "",
 }
 
 export default function rootReducer(state = inicialState, action) {
@@ -89,6 +92,18 @@ export default function rootReducer(state = inicialState, action) {
             healthScore: hScoreResta - action.payload
          }
 
+      case TOKEN:
+         return {
+            ...state,
+            token: action.payload
+         }
+
+      case SET_TOKEN:
+         return {
+            ...state,
+            token: action.payload
+         }
+         
       default:
          return state
    }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
-import ContenedorMenu from '../ContenedorMenu';
-import ContenedorPlatos from '../ContenedorPlatos';
+import ContenedorMenu from '../menu/ContenedorMenu';
+import ContenedorPlatos from '../platos/ContenedorPlatos';
 import "../../index.css";
 
 const Home = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import MiMenu from './MiMenu'
-import '../index.css'
 import { useSelector } from 'react-redux';
+import '../../index.css'
 
 const ContenedorMenu = () => {
 
