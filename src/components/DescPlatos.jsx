@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from './views/Navbar'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { detallesPlato } from './redux/action/action'
@@ -26,17 +25,16 @@ const DescPlatos = () => {
                style={{ height: '90vh' }}
             >
                <div
-                  className="contenedor-cards row mb-4 bg-light"
-                  style={{ height: '40rem' }}
+                  className="contenedor-desc-cards row mb-4 bg-light justify-content-center align-items-center"
                >
-                  <div className="col-6 justify-content-center align-items-center center h-100 bg-light">
+                  <div className="col-lg-6 col-md-6 col-sm-12 h-100 bg-light">
                      <img
                         src={detallesDelPlato.image}
                         alt="plato"
                         style={{ width: "100%" }}
                      />
                   </div>
-                  <div className="col-6 d-flex align-items-center justify-content-center p-5 h-100">
+                  <div className="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center p-5 h-100">
                      <div className="row">
                         <h1 style={{ fontWeight: 700 }}>{detallesDelPlato.title}</h1>
                         <h1 className="mt-5" style={{ fontWeight: 700 }}>${detallesDelPlato.pricePerServing}</h1>
@@ -70,7 +68,7 @@ const DescPlatos = () => {
                         <button as="a" href={detallesDelPlato.sourceUrl} className="btn btn-primary mt-5">Mas información</button>
                      </div>
                   </div>
-                  <div className="col-12 mt-4">
+                  <div className="col-12 mt-4 mb-4">
                      <Link
                         to={"/home"}
                         style={{ textDecoration: "none", color: "black", fontWeight: "600", fontSize: "20px" }}

@@ -10,21 +10,21 @@ function App() {
   return (
     <>
       <Router>
-      <Routes>
-        <Route exact path='/' element={<Login />} />
+        <Routes>
+          <Route exact path='/' element={<Login />} />
 
-        {/* <PrivateRoute exact path='/home' element={<Home />} /> */}
+          {/* <PrivateRoute exact path='/home' element={<Home />} /> */}
 
-        <Route exact path='/home' element={<Home />} />
-        <Route exact path='/description/:id' element={<DescPlatos />} />
+          <Route exact path='/home' element={<Home />} />
+          <Route exact path='/description/:id' element={<DescPlatos />} />
 
-        {/* Método de midudev, indagar mas */}
+          {/* Método de midudev, indagar mas */}
 
-        {/* <Route exact path='/' render={() =>{
+          {/* <Route exact path='/' render={() =>{
           return user ? null : <Login />
         }} /> */}
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
     </>
   );
 }

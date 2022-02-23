@@ -5,6 +5,7 @@ import axios from "axios"
 // const apiKey = `b3bfeb277ec149fcb4a10c9d5d607776`
 const apiKey = `0b5f53270b7447f78f17dd235a9bf7e2`
 
+export const TOKEN = "TOKEN"
 export const BUSCAR_PLATOS = "BUSCAR_PLATOS"
 export const AGREGAR_PLATOS = "AGREGAR_PLATOS"
 export const ELIMINAR_PLATOS = "ELIMINAR_PLATOS"
@@ -102,6 +103,13 @@ export function healthScoreSuma(payload){
 export function healthScoreResta(payload){
    return {
       type:HEALTH_SCORE_RESTA,
+      payload
+   }
+}
+
+export function userToken(payload){
+   return {
+      type:TOKEN,
       payload
    }
 }

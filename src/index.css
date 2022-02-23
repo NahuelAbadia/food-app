@@ -152,6 +152,12 @@
   font-family: var(--pageFont);
 }
 
+.contenedor-desc-cards{
+  border:1px solid var(--gris1);
+  border-radius: 10px;
+  font-family: var(--pageFont);
+}
+
 .carrito{
   width:100%;
   display:flex;

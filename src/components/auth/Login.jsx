@@ -23,6 +23,15 @@ const Login = () => {
    //State para el Spinner
    const [cargando, setCargando] = useState(false)
 
+   //Funcion para guardar el token
+   const setLocalStorage = value => {
+      try {
+         window.localStorage.setItem("Token", value)
+      } catch (error) {
+         console.error(error)
+      }
+   }
+
    const onChange = e => {
       setUsuario({
          ...usuario,
@@ -52,7 +61,7 @@ const Login = () => {
             if (result.data.token) {
                console.log(result.data.token);
                //Guardo el token en local storage
-               localStorage.setItem("token", result.data.token)
+               setLocalStorage(result.data.token)
                setTimeout(() => {
                   setCargando(true)
                   //Navego al home
