@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { Formik, Form, Field } from 'formik'
 import { buscarPlatos, } from './redux/action/action';
 import { useDispatch, useSelector } from 'react-redux';
-import * as Yup from 'yup'
 import "../index.css";
 
 const Buscador = () => {
@@ -59,36 +57,6 @@ const Buscador = () => {
                />
             </div>
          </form>
-
-         {/* <Formik
-            initialValues={{
-               plato: "",
-            }}
-            onSubmit={(values) => {
-               handleSubmit(values)
-            }}
-            validationSchema={nuevoPlatoSchema}
-         >
-            {() => {
-               return (
-                  <Form>
-                     <div className="buscador">
-                        <Field
-                           name="plato"
-                           type="text"
-                           className="form-control"
-                           placeholder="Buscar tu plato en Nappi..."
-                        />
-                        <input
-                           className="boton btn btn-primary"
-                           type="submit"
-                           value="Buscar"
-                        />
-                     </div>
-                  </Form>
-               )
-            }}
-         </Formik> */}
       </div>
    )
 }

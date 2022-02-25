@@ -1,7 +1,6 @@
 import React from 'react'
 import Platos from './Platos';
 import { useSelector } from 'react-redux'
-import Spinner from '../spinner/Spinner';
 
 const ContenedorPlatos = () => {
 

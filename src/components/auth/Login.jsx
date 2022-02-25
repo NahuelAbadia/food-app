@@ -60,7 +60,7 @@ const Login = () => {
 
             const result = await axios.post(`http://challenge-react.alkemy.org/`, {
                email: email,
-               password: password
+               password: password,
             })
 
             if (result.data.token) {

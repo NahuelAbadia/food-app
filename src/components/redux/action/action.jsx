@@ -1,9 +1,6 @@
 import axios from "axios"
 
-// const apiKey = `790c19bb62e647dfa16d07f8fe83851f`
-// const apiKey = `bc57d855899b4bfda4d2cc6e158914ce`
-// const apiKey = `b3bfeb277ec149fcb4a10c9d5d607776`
-const apiKey = `176311675bab4fc0b6d062692781f1a7`
+const apiKey = `790c19bb62e647dfa16d07f8fe83851f`
 
 export const TOKEN = "TOKEN"
 export const SET_TOKEN = "SET_TOKEN"
