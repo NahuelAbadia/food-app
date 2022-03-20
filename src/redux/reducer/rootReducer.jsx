@@ -20,7 +20,9 @@ const inicialState = {
    detalles: {},
    total: 0,
    minutos: 0,
+   promMinutos: 0,
    healthScore: 0,
+   promHealthScore: 0,
    token: localStorage.getItem("Token") || "",
 }
 
@@ -65,31 +67,41 @@ export default function rootReducer(state = inicialState, action) {
          }
 
       case LISTO_EN_SUMA:
-         let listoEnMinutos = state.minutos
+         let cantidadMinutosSuma = state.carrito.length
+         let listoEnMinutosSuma = (state.minutos + action.payload) / cantidadMinutosSuma
          return {
             ...state,
-            minutos: listoEnMinutos + action.payload
+            minutos: state.minutos + action.payload,
+            promMinutos: listoEnMinutosSuma
          }
 
       case LISTO_EN_RESTA:
-         let listoEnMinutosResta = state.minutos
+         let cantidadMinutosResta = state.carrito.length
+         let restaMinutos = state.minutos - action.payload
+         let promedioMinutos = restaMinutos / cantidadMinutosResta
          return {
             ...state,
-            minutos: listoEnMinutosResta - action.payload
+            minutos: restaMinutos,
+            promMinutos: promedioMinutos
          }
 
       case HEALTH_SCORE_SUMA:
-         let hScoreSuma = state.healthScore
+         let cantidadPlatosSuma = state.carrito.length
+         let sumaProm = (state.healthScore + action.payload) / cantidadPlatosSuma
          return {
             ...state,
-            healthScore: hScoreSuma + action.payload
+            healthScore: state.healthScore + action.payload,
+            promHealthScore: sumaProm
          }
 
       case HEALTH_SCORE_RESTA:
-         let hScoreResta = state.healthScore
+         let cantidadPlatosResta = state.carrito.length
+         let restaHS = state.healthScore - action.payload
+         let promedioHsNuevo = restaHS / cantidadPlatosResta
          return {
             ...state,
-            healthScore: hScoreResta - action.payload
+            healthScore: restaHS,
+            promHealthScore: promedioHsNuevo
          }
 
       case TOKEN:
@@ -103,7 +115,7 @@ export default function rootReducer(state = inicialState, action) {
             ...state,
             token: action.payload
          }
-         
+
       default:
          return state
    }

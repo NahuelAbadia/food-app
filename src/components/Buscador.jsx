@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { buscarPlatos, } from '../redux/action/action';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import "../index.css";
 
 const Buscador = () => {
@@ -10,9 +10,6 @@ const Buscador = () => {
       titulo: "",
    })
    const { titulo } = menu
-
-   //State para el Spinner
-   const [cargando, setCargando] = useState(false)
    
    const handleChange = e => {
       setMenu({
@@ -23,18 +20,11 @@ const Buscador = () => {
 
    const handleSubmit = e => {
       e.preventDefault()
-      //Mostrar el spinner
-      setCargando(true)
-      setTimeout(() => {
-         setCargando(true)
-      }, 1500)
+      
       dispatch(buscarPlatos(titulo))
-      console.log(platos)
    }
 
    const dispatch = useDispatch() //useDispatch conecta las action con los components para poder ser usados
-   const platos = useSelector(state => state.platos) //useSelector conecta el state del reducer con el component,
-   // este solo sirve para mostrar el resultado de la accion buscarPlatos.
 
    return (
       <div className="col">

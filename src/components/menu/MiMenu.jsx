@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../index.css'
 
-const MiMenu = ({ id, title, image, healthScore, readyInMinutes, pricePerServing, plato }) => {
+const MiMenu = ({ id, title, image, healthscore, readyInMinutes, pricePerServing, plato }) => {
 
   const dispatch = useDispatch()
 
@@ -31,7 +31,7 @@ const MiMenu = ({ id, title, image, healthScore, readyInMinutes, pricePerServing
                     dispatch(eliminarPlatos(plato.id))
                     dispatch(precioTotalResta(pricePerServing))
                     dispatch(listoEnResta(readyInMinutes))
-                    dispatch(healthScoreResta(healthScore))
+                    dispatch(healthScoreResta(healthscore))
                   }}
                 >
                   Eliminar
@@ -42,7 +42,7 @@ const MiMenu = ({ id, title, image, healthScore, readyInMinutes, pricePerServing
                   id={id}
                   title={title}
                   image={image}
-                  healthScore={healthScore}
+                  healthscore={healthscore}
                 >
                   <Button
                     variant="primary"

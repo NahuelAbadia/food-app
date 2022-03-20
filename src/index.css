@@ -25,6 +25,8 @@
 
 .form-usuario {
   background-color: var(--violeta1);
+  background-image: url("C:\Users\Nahuel\Desktop\React-Projects\challenge-frontend-alkemy\src\assets\fondo1.jpg");
+  background-repeat: no-repeat;
   height: 100vh;
   min-height: 800px;
   display: flex;

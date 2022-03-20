@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma } from '../../redux/action/action';
 import '../../index.css'
 
-const Platos = ({ id, title, image, healthScore, readyInMinutes, pricePerServing, plato }) => {
+const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing, plato }) => {
 
   const dispatch = useDispatch()
   //Me traigo state de carrito
@@ -16,14 +16,14 @@ const Platos = ({ id, title, image, healthScore, readyInMinutes, pricePerServing
   const validaciones = () => {
     let vegano = carritoRedux.filter((item) => item.vegan === true)
     let normal = carritoRedux.filter((item) => item.vegan === false)
-    console.log(vegano)
+    
     if (carritoRedux.length < 4) {
       if (plato.vegan === true && vegano.length < 2) {
         window.scrollTo(0, 0)
         dispatch(agregarPlatos(plato))
         dispatch(precioTotalSuma(pricePerServing))
         dispatch(listoEnSuma(readyInMinutes))
-        dispatch(healthScoreSuma(healthScore))
+        dispatch(healthScoreSuma(healthscore))
       }
       else if (plato.vegan === true) {
         Swal.fire({
@@ -36,7 +36,7 @@ const Platos = ({ id, title, image, healthScore, readyInMinutes, pricePerServing
         dispatch(agregarPlatos(plato))
         dispatch(precioTotalSuma(pricePerServing))
         dispatch(listoEnSuma(readyInMinutes))
-        dispatch(healthScoreSuma(healthScore))
+        dispatch(healthScoreSuma(healthscore))
       }
       else if (plato.vegan === false) {
         Swal.fire({
@@ -81,7 +81,7 @@ const Platos = ({ id, title, image, healthScore, readyInMinutes, pricePerServing
                 id={id}
                 title={title}
                 image={image}
-                healthScore={healthScore}
+                healthscore={healthscore}
               >
                 <Button
                   variant="primary"

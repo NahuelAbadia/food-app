@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const apiKey = `790c19bb62e647dfa16d07f8fe83851f`
+const apiKey = "176311675bab4fc0b6d062692781f1a7"
 
 export const TOKEN = "TOKEN"
 export const SET_TOKEN = "SET_TOKEN"
@@ -63,58 +63,58 @@ export function detallesPlato(id) {
    }
 }
 
-export function precioTotalSuma(payload){
+export function precioTotalSuma(payload) {
    return {
       type: PRECIO_TOTAL_SUMA,
       payload
    }
 }
 
-export function precioTotalResta(payload){
+export function precioTotalResta(payload) {
    return {
       type: PRECIO_TOTAL_RESTA,
       payload
    }
 }
 
-export function listoEnSuma(payload){
+export function listoEnSuma(payload) {
    return {
-      type:LISTO_EN_SUMA,
+      type: LISTO_EN_SUMA,
       payload
    }
 }
 
-export function listoEnResta(payload){
+export function listoEnResta(payload) {
    return {
-      type:LISTO_EN_RESTA,
+      type: LISTO_EN_RESTA,
       payload
    }
 }
 
-export function healthScoreSuma(payload){
+export function healthScoreSuma(payload) {
    return {
-      type:HEALTH_SCORE_SUMA,
+      type: HEALTH_SCORE_SUMA,
       payload
    }
 }
 
-export function healthScoreResta(payload){
+export function healthScoreResta(payload) {
    return {
-      type:HEALTH_SCORE_RESTA,
+      type: HEALTH_SCORE_RESTA,
       payload
    }
 }
 
-export function userToken(payload){
+export function userToken(payload) {
    return {
-      type:TOKEN,
+      type: TOKEN,
       payload
    }
 }
 
-export function setToken(payload){
+export function setToken(payload) {
    return {
-      type:SET_TOKEN,
+      type: SET_TOKEN,
       payload
    }
 }

@@ -13,13 +13,13 @@ const ContenedorPlatos = () => {
             <div className="contenedor-cards mt-3 mb-4 bg-light">
                <div className="container">
                   <div className="row mt-3 mb-3">
-                     {platos.map((item) => {
-                        return <div className="col-lg-4 col-md-6 col-sm-12">
+                     {platos.map((item, index) => {
+                        return <div key={index} className="col-lg-4 col-md-6 col-sm-12">
                            <Platos
                               id={item.id}
                               title={item.title}
                               image={item.image}
-                              healthScore={item.healthScore}
+                              healthscore={item.healthScore}
                               pricePerServing={item.pricePerServing}
                               readyInMinutes={item.readyInMinutes}
                               plato={item} //le paso todas las props que tiene el plato
