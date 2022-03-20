@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { detallesPlato } from '../redux/action/action'
+import { detallesPlato } from '../../redux/action/action'
 import { useEffect } from 'react'
 
 const DescPlatos = () => {

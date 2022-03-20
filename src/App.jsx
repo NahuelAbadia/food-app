@@ -1,9 +1,9 @@
 import React from 'react';
-import Login from './components/auth/Login'
+import Login from './auth/Login'
 import Home from './components/views/Home';
 import DescPlatos from './components/platos/DescPlatos';
-import PrivateRoutes from './components/auth/PrivateRoutes';
-import Error404 from './components/auth/Error404';
+import PrivateRoutes from './auth/PrivateRoutes';
+import Error404 from './auth/Error404';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { eliminarPlatos, precioTotalResta, listoEnResta, healthScoreResta } from '../redux/action/action';
+import { eliminarPlatos, precioTotalResta, listoEnResta, healthScoreResta } from '../../redux/action/action';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../index.css'

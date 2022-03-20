@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import Spinner from '../spinner/Spinner'
-import '../../index.css'
+import Spinner from '../components/spinner/Spinner'
+import '../index.css'
 import { useDispatch } from 'react-redux';
 import { setToken } from '../redux/action/action';
 

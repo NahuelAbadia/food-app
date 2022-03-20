@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma } from '../redux/action/action';
+import { agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma } from '../../redux/action/action';
 import '../../index.css'
 
 const Platos = ({ id, title, image, healthScore, readyInMinutes, pricePerServing, plato }) => {

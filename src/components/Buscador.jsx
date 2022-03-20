@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { buscarPlatos, } from './redux/action/action';
+import { buscarPlatos, } from '../redux/action/action';
 import { useDispatch, useSelector } from 'react-redux';
 import "../index.css";
 
