@@ -71,8 +71,8 @@ const Login = () => {
                setLocalStorage(result.data.token)
                setTimeout(() => {
                   setCargando(true)
-                  //Navego al home
-                  navigate("/home");
+                  //Navego a search
+                  navigate("/search");
                }, 1500)
             }
          } catch (error) {

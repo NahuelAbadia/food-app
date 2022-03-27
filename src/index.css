@@ -35,8 +35,8 @@
 }
 
 .contenedor-form {
-  padding: 5rem 3rem;
-  max-width: 500px;
+  padding: 7rem 3rem;
+  max-width: 550px;
   width: 95%;
   background-color: var(--blanco);
   border-radius: 1rem;
@@ -172,12 +172,6 @@
   padding-left: 30px;
 }
 
-.info-carrito{
-  display:flex;
-  font-weight: 700;
-  padding-left: 30px;
-}
-
 /* PLATOS */
 
 .center{
@@ -188,4 +182,9 @@
 
 li{
   list-style: none;
+}
+
+.fondo{
+  background-image: url("C:\Users\Nahuel\Desktop\React-Projects\challenge-frontend-alkemy\src\assets\fondo1.jpg");
+  background-repeat: no-repeat;
 }

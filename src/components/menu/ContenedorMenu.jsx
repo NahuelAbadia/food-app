@@ -1,6 +1,8 @@
 import React from 'react'
 import MiMenu from './MiMenu'
 import { useSelector } from 'react-redux';
+import { BiTimeFive } from 'react-icons/bi';
+import { GiHealthNormal } from 'react-icons/gi';
 import '../../index.css'
 
 const ContenedorMenu = () => {
@@ -31,12 +33,21 @@ const ContenedorMenu = () => {
                   })}
                </div>
                <div className="mt-3 mb-4">
-                  <h4 className="info-carrito">Total: ${total.toFixed(2)}</h4>
-                  <h4 className="info-carrito">Tus platos estaran listos en: {minutos} minutos</h4>
-                  <h4 className="info-carrito">Promedio de Health Score: {hScoreProm.toFixed(2)}</h4>
+                  <div className="d-flex" style={{ paddingLeft: "20px" }}>
+                     <h4 className="fw-bold">Total:</h4>
+                     <h4 className="fw-bold" style={{ paddingLeft: "12px" }}>${total.toFixed(2)}</h4>
+                  </div>
+                  <div className="d-flex" style={{ paddingLeft: "20px" }}>
+                     <h4 className="fw-bold">Tiempo:</h4>
+                     <h4 className="fw-bold" style={{ paddingLeft: "12px" }}><BiTimeFive /> {minutos} minutos</h4>
+                  </div>
+                  <div className="d-flex" style={{ paddingLeft: "20px" }}>
+                     <h4 className="fw-bold">Promedio de Health Score:</h4>
+                     <h4 className="fw-bold" style={{ paddingLeft: "12px" }}><GiHealthNormal /> {hScoreProm.toFixed(2)}</h4>
+                  </div>
                </div>
             </div>
-            : null
+            : <h1 className="fw-light text-center pt-2">Empieza buscando tu comida favorita</h1>
          }
       </>
    )

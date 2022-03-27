@@ -4,13 +4,13 @@ import {
    BUSCAR_PLATOS,
    AGREGAR_PLATOS,
    ELIMINAR_PLATOS,
-   DETALLES_PLATO,
    PRECIO_TOTAL_SUMA,
    PRECIO_TOTAL_RESTA,
    LISTO_EN_SUMA,
    LISTO_EN_RESTA,
    HEALTH_SCORE_SUMA,
    HEALTH_SCORE_RESTA,
+   LOADING,
 }
    from '../action/action'
 
@@ -24,6 +24,7 @@ const inicialState = {
    healthScore: 0,
    promHealthScore: 0,
    token: localStorage.getItem("Token") || "",
+   loading: false
 }
 
 export default function rootReducer(state = inicialState, action) {
@@ -31,7 +32,8 @@ export default function rootReducer(state = inicialState, action) {
       case BUSCAR_PLATOS:
          return {
             ...state,
-            platos: action.payload
+            platos: action.payload,
+            loading: false,
          }
 
       case AGREGAR_PLATOS:
@@ -44,12 +46,6 @@ export default function rootReducer(state = inicialState, action) {
          return {
             ...state,
             carrito: state.carrito.filter((item) => item.id !== action.payload) //Retorno el state de carrito con los platos que sean diferente del id selecionado para eliminar
-         }
-
-      case DETALLES_PLATO:
-         return {
-            ...state,
-            detalles: action.payload,
          }
 
       case PRECIO_TOTAL_SUMA:
@@ -114,6 +110,12 @@ export default function rootReducer(state = inicialState, action) {
          return {
             ...state,
             token: action.payload
+         }
+
+      case LOADING:
+         return {
+            ...state,
+            loading: true
          }
 
       default:

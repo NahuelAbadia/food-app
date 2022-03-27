@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from './auth/Login'
 import Home from './components/views/Home';
-import DescPlatos from './components/platos/DescPlatos';
+import Landing from './components/Landing';
 import PrivateRoutes from './auth/PrivateRoutes';
 import Error404 from './auth/Error404';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -20,8 +20,8 @@ function App() {
         <Routes>
           <Route exact path='/' element={<Login />} />
           <Route element={<PrivateRoutes Token={Token} />}>
+            <Route exact path='/search' element={<Landing />} />
             <Route exact path='/home' element={<Home />} />
-            <Route exact path='/description/:id' element={<DescPlatos />} />
           </Route>
           <Route path='*' element={<Error404 />} />
         </Routes>

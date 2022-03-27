@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma } from '../../redux/action/action';
+import PopUp from '../PopUp';
 import '../../index.css'
 
-const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing, plato }) => {
+const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing, plato, vegan }) => {
 
   const dispatch = useDispatch()
   //Me traigo state de carrito
@@ -16,7 +16,7 @@ const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing
   const validaciones = () => {
     let vegano = carritoRedux.filter((item) => item.vegan === true)
     let normal = carritoRedux.filter((item) => item.vegan === false)
-    
+
     if (carritoRedux.length < 4) {
       if (plato.vegan === true && vegano.length < 2) {
         window.scrollTo(0, 0)
@@ -53,6 +53,11 @@ const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing
     }
   }
 
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+
   return (
     <div className="d-flex justify-content-center m-4">
       <Card style={{ width: '24rem', height: '32rem', }}>
@@ -60,7 +65,7 @@ const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing
         <Card.Body>
           <div className="d-flex flex-column justify-content-between h-100">
             <div className="d-flex flex-column">
-              <Card.Title style={{fontSize:"25px", fontWeight:600}}>{title}</Card.Title>
+              <Card.Title style={{ fontSize: "25px", fontWeight: 600 }}>{title}</Card.Title>
               <h3>
                 ${pricePerServing}
               </h3>
@@ -75,20 +80,24 @@ const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing
               >
                 Añadir
               </Button>
-              <Link
-                to={`/description/${id}`}
-                style={{ textDecoration: "none" }}
+              <Button
+                variant="primary"
+                onClick={handleShow}
+              >
+                Ver detalles
+              </Button>
+              <PopUp
+                show={show}
+                handleClose={handleClose}
                 id={id}
                 title={title}
+                precio={pricePerServing}
                 image={image}
                 healthscore={healthscore}
-              >
-                <Button
-                  variant="primary"
-                >
-                  Ver detalles
-                </Button>
-              </Link>
+                readyInMinutes={readyInMinutes}
+                vegan={vegan}
+                sourceUrl={plato.sourceUrl}
+              />
             </div>
           </div>
         </Card.Body>

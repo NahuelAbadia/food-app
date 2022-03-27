@@ -7,19 +7,20 @@ export const SET_TOKEN = "SET_TOKEN"
 export const BUSCAR_PLATOS = "BUSCAR_PLATOS"
 export const AGREGAR_PLATOS = "AGREGAR_PLATOS"
 export const ELIMINAR_PLATOS = "ELIMINAR_PLATOS"
-export const DETALLES_PLATO = "DETALLES_PLATO"
 export const PRECIO_TOTAL_SUMA = "PRECIO_TOTAL_SUMA"
 export const PRECIO_TOTAL_RESTA = "PRECIO_TOTAL_RESTA"
 export const LISTO_EN_SUMA = "LISTO_EN_SUMA"
 export const LISTO_EN_RESTA = "LISTO_EN_RESTA"
 export const HEALTH_SCORE_SUMA = "HEALTH_SCORE_SUMA"
 export const HEALTH_SCORE_RESTA = "HEALTH_SCORE_RESTA"
+export const LOADING = "LOADING"
 
 export function buscarPlatos(titulo) {
    //Cada vez que necesite conectarme a una API tengo que usar "dispatch" para poder consultarla y poder guardar los datos.
    return async function (dispatch) {
+      dispatch(loading())
       try {
-         const URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=18&query=${titulo}&addRecipeInformation=true`
+         const URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=30&query=${titulo}&addRecipeInformation=true`
 
          const resultado = await axios.get(URL)
          //Guardo el tipo de accion y el payload que es la info que extraigo de la API
@@ -45,21 +46,6 @@ export function eliminarPlatos(id) {
    return {
       type: ELIMINAR_PLATOS,
       payload: id,
-   }
-}
-
-export function detallesPlato(id) {
-   return async function (dispatch) {
-      try {
-         const detalles = await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`)
-         //Guardo el tipo de accion y el payload que es la info que extraigo de la API
-         return dispatch({
-            type: DETALLES_PLATO,
-            payload: detalles.data,
-         })
-      } catch (error) {
-         console.log(error)
-      }
    }
 }
 
@@ -116,5 +102,11 @@ export function setToken(payload) {
    return {
       type: SET_TOKEN,
       payload
+   }
+}
+
+export function loading() {
+   return {
+      type: LOADING,
    }
 }
