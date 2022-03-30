@@ -39,13 +39,13 @@ export default function rootReducer(state = inicialState, action) {
       case AGREGAR_PLATOS:
          return {
             ...state,
-            carrito: state.carrito.concat(action.payload) //Retorno el state de carrito y lo concateno con las busquedas que seleccione con el boton "Añadir"
+            carrito: state.carrito.concat(action.payload), //Retorno el state de carrito y lo concateno con las busquedas que seleccione con el boton "Añadir"
          }
 
       case ELIMINAR_PLATOS:
          return {
             ...state,
-            carrito: state.carrito.filter((item) => item.id !== action.payload) //Retorno el state de carrito con los platos que sean diferente del id selecionado para eliminar
+            carrito: state.carrito.filter((item) => item.id !== action.payload), //Retorno el state de carrito con los platos que sean diferente del id selecionado para eliminar
          }
 
       case PRECIO_TOTAL_SUMA:

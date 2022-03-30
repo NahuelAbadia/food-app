@@ -1,5 +1,5 @@
 import React from 'react'
-import MiMenu from './MiMenu'
+import CardPlatos from '../platos/CardPlatos';
 import { useSelector } from 'react-redux';
 import { BiTimeFive } from 'react-icons/bi';
 import { GiHealthNormal } from 'react-icons/gi';
@@ -20,7 +20,7 @@ const ContenedorMenu = () => {
                <div className="row mt-3 mb-3 carrito">
                   {carritoRedux.length <= 0 ? null : carritoRedux.map((item, index) => {
                      return <div key={index} className="col-lg-3 col-md-6 col-sm-6">
-                        <MiMenu
+                        <CardPlatos
                            id={item.id}
                            title={item.title}
                            image={item.image}

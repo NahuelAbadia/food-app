@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma } from '../../redux/action/action';
+import {
+  agregarPlatos, precioTotalSuma, listoEnSuma, healthScoreSuma,
+  eliminarPlatos, precioTotalResta, listoEnResta, healthScoreResta
+} from '../../redux/action/action';
 import PopUp from '../PopUp';
 import '../../index.css'
 
-const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing, plato, vegan }) => {
+const CardPlatos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing, plato, vegan, favorito }) => {
 
   const dispatch = useDispatch()
   //Me traigo state de carrito
@@ -13,7 +16,7 @@ const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing
   //Alert
   const Swal = require('sweetalert2')
 
-  const validaciones = () => {
+  const validaciones = () => {    
     let vegano = carritoRedux.filter((item) => item.vegan === true)
     let normal = carritoRedux.filter((item) => item.vegan === false)
 
@@ -74,12 +77,25 @@ const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing
               </h6>
             </div>
             <div className="d-flex justify-content-between ">
-              <Button
-                onClick={validaciones}
-                variant="primary"
-              >
-                Añadir
-              </Button>
+              {favorito === false ?
+                <Button
+                  onClick={validaciones}
+                  variant="primary"
+                >
+                  Añadir
+                </Button>
+                :
+                <Button
+                  variant="danger"
+                  onClick={() => {
+                    dispatch(eliminarPlatos(plato.id))
+                    dispatch(precioTotalResta(pricePerServing))
+                    dispatch(listoEnResta(readyInMinutes))
+                    dispatch(healthScoreResta(healthscore))
+                  }}
+                >
+                  Eliminar
+                </Button>}
               <Button
                 variant="primary"
                 onClick={handleShow}
@@ -106,4 +122,4 @@ const Platos = ({ id, title, image, healthscore, readyInMinutes, pricePerServing
   )
 }
 
-export default Platos;
+export default CardPlatos;

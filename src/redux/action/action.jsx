@@ -15,6 +15,9 @@ export const HEALTH_SCORE_SUMA = "HEALTH_SCORE_SUMA"
 export const HEALTH_SCORE_RESTA = "HEALTH_SCORE_RESTA"
 export const LOADING = "LOADING"
 
+export const FAVTRUE = "FAVTRUE"
+export const FAVFALSE = "FAVFALSE"
+
 export function buscarPlatos(titulo) {
    //Cada vez que necesite conectarme a una API tengo que usar "dispatch" para poder consultarla y poder guardar los datos.
    return async function (dispatch) {
