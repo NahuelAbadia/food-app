@@ -12,7 +12,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
 
   const Token = useSelector(state => state.token)
-  // console.log(Token)
 
   return (
     <>

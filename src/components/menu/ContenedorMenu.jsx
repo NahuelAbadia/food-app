@@ -47,7 +47,7 @@ const ContenedorMenu = () => {
                   </div>
                </div>
             </div>
-            : <h1 className="fw-light text-center pt-2">Empieza buscando tu comida favorita</h1>
+            : null
          }
       </>
    )
