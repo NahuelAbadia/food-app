@@ -92,8 +92,8 @@ const Login = () => {
    const componente = (cargando) ? <Spinner /> : <input type="submit" className="btnn btn-primario btn-block" value="Iniciar Sesión" />
 
    return (
-      <div className="form-usuario">
-         <div className="contenedor-form sombra-dark ">
+      <div className="form-usuario fondo">
+         <div className="contenedor-form sombra-dark">
             <h1 className="titulo">Iniciar Sesion</h1>
             <form
                onSubmit={onSubmit}
