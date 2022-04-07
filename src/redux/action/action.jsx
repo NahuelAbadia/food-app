@@ -14,7 +14,6 @@ export const LISTO_EN_RESTA = "LISTO_EN_RESTA"
 export const HEALTH_SCORE_SUMA = "HEALTH_SCORE_SUMA"
 export const HEALTH_SCORE_RESTA = "HEALTH_SCORE_RESTA"
 export const LOADING = "LOADING"
-
 export const FAVTRUE = "FAVTRUE"
 export const FAVFALSE = "FAVFALSE"
 
@@ -26,6 +25,7 @@ export function buscarPlatos(titulo) {
          const URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&number=30&query=${titulo}&addRecipeInformation=true`
 
          const resultado = await axios.get(URL)
+         console.log(resultado.data)
          //Guardo el tipo de accion y el payload que es la info que extraigo de la API
          return dispatch({
             type: BUSCAR_PLATOS,
